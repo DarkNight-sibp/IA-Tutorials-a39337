@@ -12,7 +12,8 @@ public class FireShell : MonoBehaviour
     public Transform turretBase;
 
     float speed = 15;
-    float rotSpeed = 2;
+    float rotSpeed = 5;
+    float moveSpeed = 1;
 
     void CreateBullet()
     {
@@ -21,6 +22,7 @@ public class FireShell : MonoBehaviour
         shell.GetComponent<Rigidbody>().velocity = speed * turretBase.forward;
     }
 
+    //void RotateTurret()
     float? RotateTurret()
     {
 
@@ -42,7 +44,7 @@ public class FireShell : MonoBehaviour
         Vector3 targetDir = enemy.transform.position - this.transform.position;
         float y = targetDir.y;
         targetDir.y = 0.0f;
-        float x = targetDir.magnitude - 1.0f;
+        float x = targetDir.magnitude - 1;
         float gravity = 9.8f;
         float sSqr = speed * speed;
         float underTheSqrRoot = (sSqr * sSqr) - gravity * (gravity * x * x + 2 * y * sSqr); // ignore notes above, you did acidentally download the code cause you could find the fireshell. well makec the code run i guess, its not running on unity
@@ -60,18 +62,21 @@ public class FireShell : MonoBehaviour
         else
             return null;
     }
-    object Update()
+
+    //    object Update() wasnt woeking
+    void Update()
     {
 
         Vector3 direction = (enemy.transform.position - this.transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0.0f, direction.z));
         this.transform.rotation = Quaternion.Slerp(this.transform.rotation, lookRotation, Time.deltaTime * rotSpeed);
-        RotateTurret();
+        float? angle = RotateTurret();
         if (Input.GetKeyDown(KeyCode.Space))
         {
             CreateBullet();
-            return 0; 
         }
+        else
+        { this.transform.Translate(0, 0, Time.deltaTime * moveSpeed);}
     }
 }
 
