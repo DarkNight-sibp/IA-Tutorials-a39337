@@ -22,7 +22,10 @@ public class dropc : MonoBehaviour
             if (Physics.Raycast(ray.origin, ray.direction, out hitinfo)) 
             { 
                 Instantiate(obstacle, hitinfo.point, obstacle.transform.rotation);
-                //foreach (GameObject a in agents) IK 10 }
+                foreach (GameObject a in agents)
+                {
+                    a.GetComponent<AIControl>().DetectNewObstacle(hitinfo.point);
+                }
             }
         }
     }
