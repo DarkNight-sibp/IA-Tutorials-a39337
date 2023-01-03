@@ -21,10 +21,10 @@ public class dropc : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray.origin, ray.direction, out hitinfo)) 
             { 
-                Instantiate(obstacle, hitinfo.point, obstacle.transform.rotation);
-                foreach (GameObject a in agents)
+               // Instantiate(obstacle, hitinfo.point, obstacle.transform.rotation);
+              //  foreach (GameObject a in agents)
                 {
-                    a.GetComponent<AIControl>().DetectNewObstacle(hitinfo.point);
+                 //   a.GetComponent<AIControl>().DetectNewObstacle(hitinfo.point);
                 }
             }
         }

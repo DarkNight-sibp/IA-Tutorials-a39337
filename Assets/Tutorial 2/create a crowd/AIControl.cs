@@ -35,30 +35,29 @@ public class AIControl : MonoBehaviour
             agent.ResetPath();
         }
 
-       public void DetectNewObstacle(Vector3 position)
+       //public void DetectNewObstacle(Vector3 position)
         {
-            if (Vector3.Distance(position, this.transform.position) < detectionRadius)
+            //  if (Vector3.Distance(position, this.transform.position) < detectionRadius)
             {
-                Vector3 fleeDirection = (this.transform.position - position).normalized;
-                Vector3 newgoal = this.transform.position + fleeDirection * fleeRadius;
+                //    Vector3 fleeDirection = (this.transform.position - position).normalized;
+                //    Vector3 newgoal = this.transform.position + fleeDirection * fleeRadius;
 
-                NavMeshPath path = new NavMeshPath();
-                agent.CalculatePath(newgoal, path);
+                //    NavMeshPath path = new NavMeshPath();
+                //    agent.CalculatePath(newgoal, path);
 
-                if (path.status != NavMeshPathStatus.PathInvalid)
-                {
-                    agent.SetDestination(path.corners(path.corners.Length - 1));
-                    anim.SetTrigger("isRunning");
-                    agent.speed = 10;
-                    agent.angularSpeed = 500;
-                } }
-            void Update() {
-                if (agent.remainingDistance < 1) {
-
-                    ResetAgent();
-                    int i = Random.Range(0, goalLocations.Length);
-                    agent.SetDestination(goalLocations[i].transform.position);
-                }
+                //    if (path.status != NavMeshPathStatus.PathInvalid)
+                //  {
+                //   agent.SetDestination(path.corners(path.corners.Length - 1));
+                //        anim.SetTrigger("isRunning");
+                //    agent.speed = 10;
+                //    agent.angularSpeed = 500;
             }
         }
-    } }
+        //  void Update() {
+        //  if (agent.remainingDistance < 1) {
+
+        //  ResetAgent();
+        //  int i = Random.Range(0, goalLocations.Length);
+        //  agent.SetDestination(goalLocations[i].transform.position);
+    }
+}
