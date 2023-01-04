@@ -168,7 +168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4325107133766104}
   - component: {fileID: 95713850578013842}
-  - component: {fileID: 7915827949762030977}
+  - component: {fileID: -7844956954027130812}
   m_Layer: 0
   m_Name: PinkFish
   m_TagString: Untagged
@@ -216,7 +216,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7915827949762030977
+--- !u!114 &-7844956954027130812
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1318662798089844}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1b900db0e42a1d4983657101cb2007c, type: 3}
+  m_Script: {fileID: 11500000, guid: 092f3a58be76803438fb2029ae19409d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1350163589957252
